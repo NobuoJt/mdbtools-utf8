@@ -3,8 +3,7 @@
 A fork of @el3um4s's MDB Tools. 
 It's using utf-8 instead of windows-1252 encoding. For bash commands.  
 
-※ It's made for private use.  
-I'll not and don't make npm package. Sorry.  
+※ It's made for almost private use.    
 
 ## Original Infomation  
 Read it before install and use.  
