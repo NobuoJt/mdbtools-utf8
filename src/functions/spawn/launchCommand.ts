@@ -1,8 +1,6 @@
 import { spawn, SpawnOptionsWithoutStdio } from "node:child_process";
 import { Buffer } from "buffer";
 
-import { decode } from "../windows-1252/windows-1252";
-
 const isEmpty = (object: Record<string, unknown>): boolean =>
   Object.keys(object).length === 0;
 
@@ -46,7 +44,7 @@ const launchCommand = (cmd: Cmd): Promise<string> => {
 
     const result: string[] = [];
     child.stdout.on("data", (data) => {
-      const text = decode(data, {}).replaceAll("À,", "").replaceAll("À", "");
+      const text = data.toString("utf8").replaceAll("À,", "").replaceAll("À", "");
       result.push(text);
     });
 
